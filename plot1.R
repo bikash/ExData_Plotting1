@@ -19,9 +19,6 @@ data$Date <- as.Date(data$Date, format="%d/%m/%Y")
 data_sub <- subset(data, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
 str(data_sub) ##2880 obs. of  9 variables:
 
-## convert date into datetime format
-data_sub$Datetime <- as.POSIXct(paste(as.Date(data_sub$Date), data_sub$Time))
-
 ##plot 1
 png("plot1.png", width = 480, height = 480)
 hist(data_sub$Global_active_power, main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
